@@ -2,14 +2,30 @@ var React = require('react');
 var { Link, IndexLink } = require('react-router');
 
 var Navigation = React.createClass({
+    onSearch: function(e){
+        e.preventDefault();
+        alert('Not yet wored up');
+    },
     render: function(){
         return (
-            <nav>
-                <b>React Weather</b>
-                <IndexLink to="/" activeClassName="active" activeStyle={ { fontWeight: 'bold'} }>Get Weatcher</IndexLink>
-                <Link to="/about" activeClassName="active" activeStyle={ { fontWeight: 'bold'} }>About</Link>
-                <Link to="/examples" activeClassName="active" activeStyle={ { fontWeight: 'bold'} }>Examples</Link>
-            </nav>
+            <div className="top-bar">
+                <div className="top-bar-left">
+                    <ul className="menu">
+                        <li className="menu-text">React Weather</li>
+                        <li><IndexLink to="/" activeClassName="active" activeStyle={ { fontWeight: 'bold'} }>Get Weatcher</IndexLink></li>
+                        <li><Link to="/about" activeClassName="active" activeStyle={ { fontWeight: 'bold'} }>About</Link></li>
+                        <li><Link to="/examples" activeClassName="active" activeStyle={ { fontWeight: 'bold'} }>Examples</Link></li>
+                    </ul>
+                </div>
+                <div className="top-bar-right">
+                    <form onSubmit={this.onSearch}>
+                        <ul className="menu">
+                            <li><input type="search" placeholder="Search weatcher"/></li>
+                            <li><input type="submit" className="button" value="Get weatcher"/></li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
         )
     }
 })

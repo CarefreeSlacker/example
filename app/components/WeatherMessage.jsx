@@ -8,10 +8,8 @@ var WeatherMessage = React.createClass({
         }
     },
     render: function(){
-        debugger;
         var { cityName, temperature } = this.props;
         var messageText = this.props.cityName.length > 0 ? 'Temperature in ' + cityName + ' is ' + temperature : ''
-        debugger;
         return <p>{messageText}</p>
     }
 })
